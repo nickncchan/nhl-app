@@ -112,45 +112,47 @@ const Player = () => {
     playerCareerPlayoffs && (
       <div>
         <h1>NHL Fantasy Comparison Tool</h1>
-        <h2>{playerData.fullName}</h2>
-        <img
-          src={`https://cms.nhl.bamgrid.com/images/headshots/current/168x168/${playerID}@2x.jpg`}
-          alt="Photo Unavailable"
-          width="300px"
-        />
-        {<RenderInfoShort playerData={playerData} teamID={id} />}
-        <p>
-          <button onClick={goToCompare}>
-            {player1Name
-              ? "Compare with " + player1Name
-              : "Compare With Another Player"}
-          </button>{" "}
-          <button onClick={newPlayers}>Choose a New Player</button>
-        </p>
-        <h3>NHL Career Regular Season Totals</h3>
-        {playerData.primaryPosition.abbreviation === "G" ? (
-          <RenderCareerGoalie career={playerCareer} />
-        ) : (
-          <RenderCareerSkater career={playerCareer} />
-        )}
-        <h3>NHL Career Playoff Totals</h3>
-        {playerData.primaryPosition.abbreviation === "G" ? (
-          <RenderCareerGoalie career={playerCareerPlayoffs} />
-        ) : (
-          <RenderCareerSkater career={playerCareerPlayoffs} />
-        )}
-        <h3>Regular Season</h3>
-        {playerData.primaryPosition.abbreviation === "G" ? (
-          <RenderGoalie playerID={playerID} playerStats={playerStats} />
-        ) : (
-          <RenderSkater playerID={playerID} playerStats={playerStats} />
-        )}
-        <h3>Playoffs</h3>
-        {playerData.primaryPosition.abbreviation === "G" ? (
-          <RenderGoalie playerID={playerID} playerStats={playerPlayoffs} />
-        ) : (
-          <RenderSkater playerID={playerID} playerStats={playerPlayoffs} />
-        )}
+        <div className="player-info">
+          <h2>{playerData.fullName}</h2>
+          <img
+            src={`https://cms.nhl.bamgrid.com/images/headshots/current/168x168/${playerID}@2x.jpg`}
+            alt="player"
+            width="300px"
+          />
+          {<RenderInfoShort playerData={playerData} teamID={id} />}
+          <p>
+            <button onClick={goToCompare}>
+              {player1Name
+                ? "Compare with " + player1Name
+                : "Compare With Another Player"}
+            </button>{" "}
+            <button onClick={newPlayers}>Choose a New Player</button>
+          </p>
+          <h3>NHL Career Regular Season Totals</h3>
+          {playerData.primaryPosition.abbreviation === "G" ? (
+            <RenderCareerGoalie career={playerCareer} />
+          ) : (
+            <RenderCareerSkater career={playerCareer} />
+          )}
+          <h3>NHL Career Playoff Totals</h3>
+          {playerData.primaryPosition.abbreviation === "G" ? (
+            <RenderCareerGoalie career={playerCareerPlayoffs} />
+          ) : (
+            <RenderCareerSkater career={playerCareerPlayoffs} />
+          )}
+          <h3>Regular Season</h3>
+          {playerData.primaryPosition.abbreviation === "G" ? (
+            <RenderGoalie playerID={playerID} playerStats={playerStats} />
+          ) : (
+            <RenderSkater playerID={playerID} playerStats={playerStats} />
+          )}
+          <h3>Playoffs</h3>
+          {playerData.primaryPosition.abbreviation === "G" ? (
+            <RenderGoalie playerID={playerID} playerStats={playerPlayoffs} />
+          ) : (
+            <RenderSkater playerID={playerID} playerStats={playerPlayoffs} />
+          )}
+        </div>
       </div>
     )
   );

@@ -209,8 +209,8 @@ const ComparePlayers = () => {
     player2CareerPlayoffs && (
       <div>
         <h1>Player Comparison</h1>
-        <button onClick={newPlayers}>Choose New Players</button>
-        <div>
+        <div className="player-info">
+          <button onClick={newPlayers}>Choose New Players</button>
           <h2>{player1Data.fullName}</h2>
           <img
             src={`https://cms.nhl.bamgrid.com/images/headshots/current/168x168/${player1}@2x.jpg`}
@@ -222,7 +222,7 @@ const ComparePlayers = () => {
           />
           {renderPlayer1Stats()}
         </div>
-        <div>
+        <div className="player-info">
           <h2>{player2Data.fullName}</h2>
           <img
             src={`https://cms.nhl.bamgrid.com/images/headshots/current/168x168/${player2}@2x.jpg`}

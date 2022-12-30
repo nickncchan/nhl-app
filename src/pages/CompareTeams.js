@@ -47,23 +47,25 @@ const CompareTeams = () => {
     team2Stats && (
       <div>
         <h1>Team Comparison</h1>
-        <button onClick={startOver}>Start Over</button>
-        <h2>{team1Stats[0].splits[0].team.name}</h2>
-        <img
-          src={`https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/${team1}.svg`}
-          alt="logo"
-          width="500px"
-          height="380px"
-        />
-        <RenderTeamStats teamStats={team1Stats} />
-        <h2>{team2Stats[0].splits[0].team.name}</h2>
-        <img
-          src={`https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/${team2}.svg`}
-          alt="logo"
-          width="500px"
-          height="380px"
-        />
-        <RenderTeamStats teamStats={team2Stats} />
+        <div className="player-info">
+          <button onClick={startOver}>Start Over</button>
+          <h2>{team1Stats[0].splits[0].team.name}</h2>
+          <img
+            src={`https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/${team1}.svg`}
+            alt="logo"
+            width="500px"
+            height="380px"
+          />
+          <RenderTeamStats teamStats={team1Stats} />
+          <h2>{team2Stats[0].splits[0].team.name}</h2>
+          <img
+            src={`https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/${team2}.svg`}
+            alt="logo"
+            width="500px"
+            height="380px"
+          />
+          <RenderTeamStats teamStats={team2Stats} />
+        </div>
       </div>
     )
   );
